@@ -1,0 +1,305 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.outerWrraper{
+    margin: 0 auto;
+    max-width: 1080px;
+    
+}
+.purple-wrraper{
+    background-color: #372459;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#hero-section {
+    color: white;
+}
+
+
+nav{
+    width: 100%;
+    height: max-content;
+    color: white;
+    padding: 10px;
+
+}
+
+#nav-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px 0 10px;
+}
+
+#logo-container {
+    height: 60px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-container img{
+    max-width:100%;
+    max-height: 100%;
+}
+
+#left-side-nav{
+    display: flex;
+    gap: 30px;
+}
+
+#navigation-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation-links {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right-side-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#languages-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: none;
+    font-weight: 800;
+    color: #4E9CA6;
+    border: 1px solid #4E9CA6;
+    background-color: #372459;
+    transition: 0.3s;
+
+}
+
+#login:hover {
+    background-color: #4E9CA6;
+    color: white;
+}
+
+#signup {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    font-weight: 800;
+    background-color: #4E9CA6;
+    color: white;
+    border: 1px solid #4E9CA6;
+}
+
+#signup:hover {
+    background-color: #372459;
+    color:#4E9CA6;
+    transition: 0.3s;
+}
+
+
+
+#right-side-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#login-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+main {
+    width: 80%;
+    margin: 100px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#main-heading {
+    font-size: 65px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 65px;
+}
+
+
+#main-heading-description {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 500px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#main-heading-image-container {
+    margin-top: 70px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-heading-image-container img {
+    height: auto;
+}
+
+/* features-gallery-section */
+
+#features-gallery {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.description {
+    font-size: 20px;
+    color: #636978;
+    line-height: 30px;
+}
+
+#intro-features{
+    display: flex;
+    justify-content: center;
+}
+
+#intro-features p{
+    margin-top: 10px;
+}
+
+.feature-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.feature-image-container {
+    width: 50%;
+}
+
+.feature-content-container{
+    width: 50%;
+}
+
+#features-section-slogan h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 60px;
+}
+
+.feature-title-container h3 {
+    font-size: 35px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+
+.blue-text{
+    color: #56B2D4;
+}
+
+.light-grey-wrapper {
+    background-color: #F2EDF7;
+}
+
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-us-intro p {
+    margin-top: 100px;
+    font-size: 25px;
+    color: #63686F;
+    text-align: center;
+}
+
+#contact-us-slogan h2 {
+    margin-top: 10px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#contact-us-secondary-slogan h3{
+    margin-top: 20px;
+    font-size: 30px;
+    color: #63686F;
+    font-weight: 100;
+}
+
+#contact-us-form {
+    display: flex;
+    gap: 0px;
+    margin-top: 100px;
+}
+
+#contact-us-form input {
+    height: 60px;
+    width: 300px;
+    border: 2px solid #4E9CA6; 
+    border-right: none;
+    padding-left: 10px;
+    background-color: #F2EDF7;
+    font-size: 15px;
+    border-radius: 10px 0 0 10px;
+}
+
+#contact-us-form button {
+    height: 60px;
+    width: 200px;
+    border-left: none;
+    background-color: #4E9CA6;
+    font-weight: 800;
+    font-size: medium;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid #4E9CA6;
+}
+
+#contact-us-form button:hover {
+    color:#4E9CA6;
+    background-color: white;
+}
+
+#terms-condition-line-container p{
+    margin-top: 5px;
+    font-size: 15px;
+    color: #62686F;
+}
+
+#terms-condition-line-container p strong {
+    color: black; 
+}
+
+#terms-condition-line-container {
+    margin-bottom: 100px;
+}
