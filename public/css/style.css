@@ -97,6 +97,7 @@ nav{
 #login:hover {
     background-color: #4E9CA6;
     color: white;
+    cursor: pointer;
 }
 
 #signup {
@@ -113,6 +114,7 @@ nav{
     background-color: #372459;
     color:#4E9CA6;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 
@@ -283,11 +285,13 @@ main {
     color: white;
     border-radius: 0 10px 10px 0;
     border: 2px solid #4E9CA6;
+    transition: 0.3s;
 }
 
 #contact-us-form button:hover {
     color:#4E9CA6;
     background-color: white;
+    cursor: pointer;
 }
 
 #terms-condition-line-container p{
@@ -308,7 +312,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 100px;
 }
+
+
 
 #recommendations-heading-container h2 {
     font-weight: bold;
@@ -343,3 +350,86 @@ main {
     font-weight: 300;
 }
 
+#success-stories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+#success-stories-heading-container h2 {
+    font-weight: bold;
+    font-size: 45px;
+    margin-top: 100px;
+}
+
+#cards-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.card {
+    margin: 0 20px 0 20px;
+    padding: 10px;  
+    box-shadow: #63686F;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+#read-story-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company-container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#success-image-1 {
+    width: 60px;
+    height: 30px;
+}
+
+#success-image-2 {
+    width: 100px;
+    height: 30px;
+}
+
+#success-image-3 {
+    width: 100px;
+    height: 30px;
+}
+
+.description-container {
+    font-size: 15px;
+    color: #636978;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 25px;
+    
+}
+
+
+.read-story-container {
+        margin-top: 15px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        transition: 1s;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
