@@ -303,3 +303,43 @@ main {
 #terms-condition-line-container {
     margin-bottom: 100px;
 }
+
+#recommendations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recommendations-heading-container h2 {
+    font-weight: bold;
+    font-size: 45px;
+    margin-top: 100px;
+}
+
+.recommendations-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recommendations-main-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.recommendations-image-container {
+    width: 80%;
+}
+
+.recommendations-content-container h4 {
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+    color: #636D85; 
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
