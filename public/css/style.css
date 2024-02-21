@@ -433,3 +433,39 @@ main {
 .card:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+#integrations {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#integrations-heading h2{
+    font-weight: 800px;
+    font-size: 35px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#image-grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    max-width: 70%;
+    margin-top: 10px;
+}
+
+.grid-image-container {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(100%);
+    transition: 0.3s ease-in-out;
+}
+
+.grid-image-container:hover {
+    filter: none;
+}
