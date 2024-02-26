@@ -5,9 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/css/style.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./index.js" defer></script>
     <title>SurveySparrow</title>
 </head>
 <body>
+
+    
+    <div id="full-window-container">
+        <div class = "modal" id="sign-up-container">
+
+            <div class="heading-container">
+                <h2>Sign Up</h2>
+            </div>
+
+            <div class="alert-container">
+                <p class = "alert-container-para"></p>
+            </div>
+
+            <div class="oauth-buttons-container">
+                <button>
+                    <div class="oauth-button-image-container">
+                        <img src="./public/images//icons/google-icon.png" alt="google-icon">
+                    </div>
+                    <div class="button-text">
+                        <p>Continue with Google</p>
+                    </div>
+                </button>
+            </div>
+
+            <p class = "OR-text">OR</p>
+
+
+            <div class="form-container">
+                <div class="form-item">
+                    <input id="signup-email" name = "Email" type="email" placeholder="email">
+                </div>
+                <div class="form-item">
+                    <input id="password"  name= "Password" type="password" placeholder="password">
+                </div>
+                <div class="form-item">
+                    <input id="confirm-password" name = "Confirm Password" type="password" placeholder="confirm password">
+                </div>
+                
+                <div class="submit-credentials-button">
+                    <button id="SignUp-Submit-Button">Sign Up</button>
+                </div>
+
+
+            </div>
+
+            <div class="already-signup-login-text">
+                <p>Already have account?<span> LOG IN </span></p>
+            </div>
+
+        </div>
+
+    </div>
+
 
     <div class="purple-wrraper"> 
         

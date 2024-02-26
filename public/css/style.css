@@ -4,6 +4,135 @@
     box-sizing: border-box;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+#full-window-container {
+    visibility:hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal {
+    width: 30%;
+    background-color:#ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+.oauth-buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.oauth-buttons-container button {
+    margin-top: 20px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 2px;
+    width: 250px;
+    gap: 10px;
+    background-color: white;
+    border: 1px solid #cbd5e0;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.oauth-buttons-container button:hover {
+    background-color: #f7fafc;
+}
+
+.oauth-button-image-container img {
+    height: 30px;
+    width: 30px;
+}
+
+
+.OR-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #7287a0;
+    font-weight: 800;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+}
+
+.form-container input {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    background-color:  #f7fafc;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+}
+
+.form-container input:focus{
+    background-color: white;
+    outline-color: #372459;
+
+}
+
+.submit-credentials-button button{
+    width: 100%;
+    height: 35px;
+    border: none;
+    font-weight: 800;
+    background-color: #372459;
+    color: white;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.submit-credentials-button button:hover {
+    background-color: #7456aa;
+}
+
+.already-signup-login-text p {
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+
+
+
+.already-signup-login-text p span {
+    font-weight: 800;
+    color: #372459;
+    cursor: pointer;
+}
+
+
+/* ------------------modal-ends-here---------------------------- */
+
 .outerWrraper{
     margin: 0 auto;
     max-width: 1080px;
@@ -13,10 +142,6 @@
     background-color: #372459;
 }
 
-img{
-    max-width: 100%;
-    max-height: 100%;
-}
 
 #hero-section {
     color: white;
