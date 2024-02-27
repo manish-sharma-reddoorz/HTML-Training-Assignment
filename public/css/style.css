@@ -116,6 +116,13 @@ img{
     background-color: #7456aa;
 }
 
+#SignUp-Submit-Button:disabled {
+    background-color:#7456aa;
+    cursor:not-allowed;
+}
+
+
+
 .already-signup-login-text p {
     margin-top: 8px;
     font-size: 12px;

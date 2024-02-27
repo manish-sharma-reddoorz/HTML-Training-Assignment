@@ -8,52 +8,85 @@ const colorObject = {
         backgroundColor: '#b4ff9b',
     }
 }
+const email =  document.getElementById('signup-email');
+const emailErrorContainer = document.getElementById('email-error');
+const password =  document.getElementById('password');
+const passwordErrorContainer = document.getElementById('password-error');
+const confirmPassword =  document.getElementById('confirm-password');
+const confirmPasswordErrorContainer = document.getElementById('confirm-password-error');
+const signupButton = document.getElementById('SignUp-Submit-Button');
 
 
-
-// for making the modal visible
-document.getElementById('signup').addEventListener('click', function (event ) {
-    
-
-    const modalWindow = document.getElementById('full-window-container');
-    modalWindow.style.visibility = 'visible';
-
-})
-
-
-// Click Away Listener
-
-document.getElementById('sign-up-container').addEventListener('click', function(event) {
-    event.stopPropagation();
-})
-
-document.getElementById('full-window-container').addEventListener('click', function(event) {
-    event.stopPropagation();
-    this.style.visibility = 'hidden';
-    this.style.transition = '0.3s ease-in-out';
-
-})
-
-
-//  for setting alert div style and message
-
-function setAlertDiv(element, borderColor, backgroundColor,  message) {
-
-    element.style.padding = '10px';
-    element.style.opacity = "0.5";
-    element.style.border = `1px solid ${borderColor}`;
-    element.style.backgroundColor = backgroundColor;
-    element.innerHTML = message;
-    element.style.margin = "10px";
-    element.style.color = "black";
-    element.style.borderRadius = "2px";
-    element.style.width = "250px";
-    element.style.fontSize = "15px";
-    element.style.visibility = "visible";
+// Validators for inputs
+const validateEmail = () => {
+    var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return email.value.match(emailRegex);
 }
 
+const validatePassword = () => {
+    var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#&])[A-Za-z\d!@#&]{8,15}$/
+    return password.value.match(passwordRegex)
+}
+
+const validateConfirmPassword = () => {
+    return password.value === confirmPassword.value;
+}
+
+
+// for setting error container
+const showError = (element, displayMode, errorMessage) => {
+    element.innerHTML = errorMessage;
+    element.style.color = "red";
+    element.style.fontSize = "10px";
+    element.style.display = displayMode;
+}
+
+
+
+// listeners for onmouseleave on inputs
+
+email.addEventListener('blur', () => {
+    if(!validateEmail()) {
+        showError(emailErrorContainer, 'block', 'email not valid');
+    }
+    else{
+        showError(emailErrorContainer, 'none');
+    }
+})
+
+
+password.addEventListener('blur', () => {
+    if(!validatePassword()) {
+        showError(passwordErrorContainer, 'block', 'password should contain A-Z, a-z, !@#&, 0-9 and length from 8-15');
+    }
+    else{
+        showError(passwordErrorContainer, 'none');
+    }
+})
+
+confirmPassword.addEventListener('blur', () => {
+    if(!validateConfirmPassword()) {
+        showError(confirmPasswordErrorContainer, 'block', 'passwords not matching');
+    }
+    else{
+        showError(confirmPasswordErrorContainer, 'none');
+    }
+})
+
+
+// disabling the button until all the validations are met
+
+
+setInterval(() => {
+    document.getElementById('SignUp-Submit-Button').disabled = !(validateEmail() && validatePassword() && validateConfirmPassword());
+},1000)
+
+
+
 document.getElementById('SignUp-Submit-Button').addEventListener('click',function(event) {
-    // inputs lo
+    // get the element access
+    // now perform the validations
+    // If validations are right perfome following:-
     // disable inputs and buttons
     // log details
     // then close the modal
@@ -61,47 +94,7 @@ document.getElementById('SignUp-Submit-Button').addEventListener('click',functio
     // and undisable the inputs
 
 
-    // getting input elements
-    const email =  document.getElementById('signup-email');
-    const password =  document.getElementById('password');
-    const confirmPassword =  document.getElementById('confirm-password');
-
-    // getting their values for validation
-    const emailValue = email.value;
-    const passwordValue = password.value;
-    const confirmPasswordValue = confirmPassword.value;
-
-
-    //performing validations
-    let alertString = "";
-    const alertContainer = document.getElementsByClassName('alert-container-para')[0];
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if(!emailValue || !emailValue.match(validRegex)) {
-        alertString = "Not a valid email!";
-        setAlertDiv(alertContainer, colorObject.red.borderColor , colorObject.red.backgroundColor, alertString);
-        return;
-    }
-
-    if(!passwordValue) {
-        alertString = "password is required!";
-        setAlertDiv(alertContainer, colorObject.red.borderColor , colorObject.red.backgroundColor, alertString);
-        return;
-    }
-
-    if(!confirmPasswordValue) {
-        alertString = "Retype the password!";
-        setAlertDiv(alertContainer, colorObject.red.borderColor , colorObject.red.backgroundColor, alertString);
-        return;
-    } 
-    if(passwordValue.length > 0 && confirmPasswordValue !== passwordValue) {
-        alertString = "passwords doesn't match!";
-        setAlertDiv(alertContainer, colorObject.red.borderColor , colorObject.red.backgroundColor, alertString);
-        return;
-    }
-
-
-    const signupButton = document.getElementById('SignUp-Submit-Button');
-    
+    // validations are being performed. Submit button will be disabled till all the validations are true
     
     // disabling inputs
     email.disabled = true;
@@ -115,15 +108,12 @@ document.getElementById('SignUp-Submit-Button').addEventListener('click',functio
     // Now Logging the details
 
     const user = {
-        email: emailValue,
-        password: passwordValue,
-        confirmPassword: confirmPasswordValue
+        email: email.value,
+        password: password.value,
+        confirmPassword: confirmPassword.value
     };
 
     setTimeout(() => {
-        // Now undisabling and displaying success message
-        alertString = "Welcome!"
-        setAlertDiv(alertContainer, colorObject.green.borderColor, colorObject.green.backgroundColor, alertString)
         setTimeout(() => {
             document.getElementById('full-window-container').style.visibility = "hidden";
             email.disabled = false;
@@ -135,10 +125,40 @@ document.getElementById('SignUp-Submit-Button').addEventListener('click',functio
             password.value = "";
             confirmPassword.value = "";
             signupButton.innerHTML = "Sign Up";
-            alertContainer.style.visibility = "hidden";
         },1000)
         console.log(user);
-    },2000)
+    },1500)
 
+})
+
+
+
+// ---------------------- for opening and closing of modal -----------------------
+
+// listening to click on signup button for making the modal visible
+document.getElementById('signup').addEventListener('click', function (event ) {
+    
+                
+    email.value = "";
+    password.value = "";
+    confirmPassword.value = "";
+    signupButton.innerHTML = "Sign Up";
+    showError(emailErrorContainer,'none');
+    showError(passwordErrorContainer,'none');
+    showError(confirmPasswordErrorContainer,'none');
+    const modalWindow = document.getElementById('full-window-container');
+    modalWindow.style.visibility = 'visible';
+
+})
+
+
+// Click Away Listener from modal to close it
+document.getElementById('sign-up-container').addEventListener('click', function(event) {
+    event.stopPropagation();
+})
+document.getElementById('full-window-container').addEventListener('click', function(event) {
+    event.stopPropagation();
+    this.style.visibility = 'hidden';
+    this.style.transition = '0.3s ease-in-out';
 
 })

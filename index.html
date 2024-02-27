@@ -18,10 +18,6 @@
                 <h2>Sign Up</h2>
             </div>
 
-            <div class="alert-container">
-                <p class = "alert-container-para"></p>
-            </div>
-
             <div class="oauth-buttons-container">
                 <button>
                     <div class="oauth-button-image-container">
@@ -39,12 +35,15 @@
             <div class="form-container">
                 <div class="form-item">
                     <input id="signup-email" name = "Email" type="email" placeholder="email">
+                    <p class="error-container" id = "email-error"></p>
                 </div>
                 <div class="form-item">
                     <input id="password"  name= "Password" type="password" placeholder="password">
+                     <p class="error-container" id = "password-error"></p>
                 </div>
                 <div class="form-item">
                     <input id="confirm-password" name = "Confirm Password" type="password" placeholder="confirm password">
+                    <p class="error-container" id = "confirm-password-error"></p>
                 </div>
                 
                 <div class="submit-credentials-button">
