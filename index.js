@@ -17,15 +17,27 @@ const confirmPasswordErrorContainer = document.getElementById('confirm-password-
 const signupButton = document.getElementById('SignUp-Submit-Button');
 
 
+
+// Function to add in prototypes
+
+String.prototype.checkEmailRegex = function() {
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return this.match(emailRegex);
+}
+
+String.prototype.checkPasswordRegex = function() {
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#&])[A-Za-z\d!@#&]{8,15}$/
+    return this.match(passwordRegex)
+}
+
+
 // Validators for inputs
 const validateEmail = () => {
-    var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return email.value.match(emailRegex);
+    return email.value.checkEmailRegex();
 }
 
 const validatePassword = () => {
-    var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#&])[A-Za-z\d!@#&]{8,15}$/
-    return password.value.match(passwordRegex)
+    return password.value.checkPasswordRegex();
 }
 
 const validateConfirmPassword = () => {
